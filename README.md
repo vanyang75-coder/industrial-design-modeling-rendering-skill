@@ -20,6 +20,12 @@ Copy the skill folder into your Codex skills directory:
 
 Then restart or refresh Codex so the skill list is reloaded.
 
+On Windows, the target is usually:
+
+```text
+C:\Users\<you>\.codex\skills\industrial-design-modeling-rendering
+```
+
 ## Optional Local Knowledge Base
 
 The bundled search script can read a local industrial design knowledge base. Set:
@@ -34,11 +40,31 @@ Without that variable, the script falls back to:
 ~/industrial-design-kb
 ```
 
+## Quick Check
+
+From the repository root, run:
+
+```powershell
+python industrial-design-modeling-rendering\scripts\check_install.py --kb-root sample-kb
+```
+
+You can also test retrieval directly:
+
+```powershell
+python industrial-design-modeling-rendering\scripts\search_kb.py "吹风机 手柄 风道 倒角" --software rhino --root sample-kb
+python industrial-design-modeling-rendering\scripts\search_kb.py "塑料 材质 粗糙度" --software keyshot --root sample-kb
+```
+
+## Sample Knowledge Base
+
+`sample-kb/` is a tiny sanitized demo corpus for testing. It contains original sample notes only. It is not a transcript archive and does not include private Obsidian content, downloaded videos, audio, or subtitles.
+
 ## Included
 
 - `SKILL.md`
 - `agents/openai.yaml`
 - `references/`
 - `scripts/search_kb.py`
+- `scripts/check_install.py`
+- `sample-kb/`
 - `PUBLISH-NOTES.md`
-
