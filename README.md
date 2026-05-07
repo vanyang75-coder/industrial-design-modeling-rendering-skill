@@ -2,6 +2,17 @@
 
 A Codex skill for screenshot-first industrial design modeling and rendering help, focused on Rhino, KeyShot, C4D, product modeling workflows, visual troubleshooting, and local knowledge-base retrieval.
 
+## Full Capability Requirements
+
+This skill is designed as a workflow and retrieval layer. Its full value depends on at least one of the following:
+
+- A strong image recognition / multimodal vision engine for software screenshots, such as a GPT image2 or image2-style visual understanding workflow when available.
+- A complete local industrial design modeling and rendering knowledge base connected through `INDUSTRIAL_DESIGN_KB`.
+
+The included `sample-kb/` is only a small sanitized demo corpus. It is useful for testing installation and retrieval, but it is not enough to provide full expert-level Rhino, KeyShot, or C4D guidance.
+
+If you need access to a complete industrial design modeling/rendering knowledge base, contact the maintainer through GitHub Issues.
+
 ## What This Publishes
 
 This repository publishes the skill package only:

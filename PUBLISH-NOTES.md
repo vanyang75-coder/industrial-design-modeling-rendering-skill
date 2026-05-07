@@ -8,6 +8,15 @@ This release contains the Codex skill package and a small sanitized sample knowl
 
 It does not include the maintainer's private Obsidian knowledge base, raw subtitles, downloaded videos, audio files, or transcript archives.
 
+## Full Capability Requirements
+
+The public package is a workflow and retrieval layer. Complete performance requires either:
+
+- a strong image recognition / multimodal vision engine for software screenshots, such as a GPT image2 or image2-style visual understanding workflow when available; or
+- a complete local industrial design modeling and rendering knowledge base configured through `INDUSTRIAL_DESIGN_KB`.
+
+The included `sample-kb/` is a sanitized demo corpus only. If a user needs a complete industrial design modeling/rendering knowledge base, they can contact the maintainer through GitHub Issues.
+
 ## Should the Knowledge Base Be Uploaded?
 
 Default recommendation: no.
