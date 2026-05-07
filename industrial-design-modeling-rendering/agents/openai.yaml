@@ -1,0 +1,5 @@
+﻿interface:
+  display_name: "Industrial Design Modeling Rendering"
+  short_description: "Screenshot-first Rhino, KeyShot, and product modeling help"
+  default_prompt: "Use $industrial-design-modeling-rendering to diagnose this modeling or rendering screenshot, route it by product type and modeling stage, and give the next practical step from the local knowledge base."
+
