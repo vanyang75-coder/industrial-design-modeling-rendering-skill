@@ -27,6 +27,12 @@ CORE_FILES = {
     "Rhino 系统性建模技巧总纲 - 字幕归纳版.md",
     "Rhino 截图问答路由规则 - 字幕证据版.md",
     "Rhino 案例建模参考卡 - 字幕提取版.md",
+    "keyshot-video-clean-index.json",
+    "KeyShot 合集清洗索引 - 100个KS实战案例渲染教程.md",
+    "KeyShot 字幕证据索引 - 100个KS实战案例渲染教程.md",
+    "KeyShot 系统性渲染技巧总纲 - 字幕归纳版.md",
+    "KeyShot 截图问答路由规则 - 字幕证据版.md",
+    "KeyShot 案例渲染参考卡 - 字幕提取版.md",
 }
 QUERY_EXPANSIONS = {
     "吹风机": ["风道", "出风口", "进风口", "手柄", "格栅"],
@@ -37,6 +43,14 @@ QUERY_EXPANSIONS = {
     "剃须刀": ["格栅", "孔阵列", "壳体", "倒角"],
     "摩托": ["交通", "车壳", "流线", "外壳", "分件"],
     "截图": ["路由", "下一步", "诊断", "阶段"],
+    "渲染": ["材质", "灯光", "相机", "场景", "输出"],
+    "材质": ["粗糙度", "反射", "贴图", "凹凸", "高光"],
+    "灯光": ["HDRI", "区域光", "主光", "辅光", "轮廓光"],
+    "相机": ["焦距", "视角", "景深", "构图", "分辨率"],
+    "噪点": ["采样", "降噪", "GPU", "输出", "照明预设"],
+    "透明": ["玻璃", "折射", "不透明度", "贴图", "圆柱映射"],
+    "白色产品": ["塑料", "玻璃", "构图", "焦距", "高光"],
+    "毛绒": ["布料", "凹凸", "法线", "景深", "光晕"],
     "倒角": ["圆角", "半径", "边缘", "顺序"],
     "布尔": ["切割", "穿透", "闭合", "重合面"],
     "曲面": ["连续", "G2", "斑马纹", "高光"],
@@ -105,6 +119,11 @@ def score_file(path: Path, text: str, terms: list[str], software: str | None) ->
         "Rhino 截图问答路由规则 - 字幕证据版",
         "Rhino 案例建模参考卡 - 字幕提取版",
         "rhino-video-clean-index",
+        "KeyShot 字幕证据索引 - 100个KS实战案例渲染教程",
+        "KeyShot 系统性渲染技巧总纲 - 字幕归纳版",
+        "KeyShot 截图问答路由规则 - 字幕证据版",
+        "KeyShot 案例渲染参考卡 - 字幕提取版",
+        "keyshot-video-clean-index",
         "规则索引",
     ]
     if any(name.lower() in hay_path for name in important_names):
@@ -118,6 +137,15 @@ def score_file(path: Path, text: str, terms: list[str], software: str | None) ->
     ]
     if software == "rhino" and any(name.lower() in hay_path for name in priority_names):
         score += 35
+    keyshot_priority_names = [
+        "KeyShot 字幕证据索引 - 100个KS实战案例渲染教程",
+        "KeyShot 系统性渲染技巧总纲 - 字幕归纳版",
+        "KeyShot 截图问答路由规则 - 字幕证据版",
+        "KeyShot 案例渲染参考卡 - 字幕提取版",
+        "keyshot-video-clean-index",
+    ]
+    if software == "keyshot" and any(name.lower() in hay_path for name in keyshot_priority_names):
+        score += 35
     term_set = {term.lower() for term in terms}
     if software == "rhino":
         if {"系统性", "总纲"} & term_set and "Rhino 系统性建模技巧总纲 - 字幕归纳版".lower() in hay_path:
@@ -130,6 +158,13 @@ def score_file(path: Path, text: str, terms: list[str], software: str | None) ->
             score += 180
     if "Rhino 47视频字幕建模参考提取 - 当前版".lower() in hay_path:
         score -= 180
+    if software == "keyshot":
+        if {"系统性", "总纲", "渲染"} & term_set and "KeyShot 系统性渲染技巧总纲 - 字幕归纳版".lower() in hay_path:
+            score += 900
+        if {"截图", "路由", "下一步", "诊断"} & term_set and "KeyShot 截图问答路由规则 - 字幕证据版".lower() in hay_path:
+            score += 320
+        if {"字幕", "证据", "bv", "索引"} & term_set and "KeyShot 字幕证据索引 - 100个KS实战案例渲染教程".lower() in hay_path:
+            score += 180
     return score
 
 

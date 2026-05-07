@@ -62,12 +62,23 @@ Modeling stage cues:
 
 ### KeyShot
 
+Prefer `KeyShot 截图问答路由规则 - 字幕证据版.md`, `KeyShot 系统性渲染技巧总纲 - 字幕归纳版.md`, and `KeyShot 案例渲染参考卡 - 字幕提取版.md` when a complete local KB is connected. The first diagnosis should route the screenshot into material, lighting, camera/composition, scene, or output quality.
+
 - Noisy render/preview -> search `噪点 采样 降噪 渲染优化`.
 - Metal looks flat or not reflective -> search `金属 粗糙度 反射 各向异性 灯光`.
 - Plastic looks fake -> search `塑料 高光 粗糙度 材质`.
 - Glass looks black/opaque -> search `玻璃 折射 薄壁 焦散 透明`.
 - Overexposed or dull lighting -> search `三点布光 HDRI 区域光 主光 辅光 过曝`.
 - Composition/camera issue -> search `相机 焦距 景深 构图 产品渲染`.
+
+KeyShot product-family routing:
+
+- Headset / wearable / watch / VR: search `耳机 头戴 手表 手环 VR 皮革 布料 凹凸 贴图 高光`.
+- White product / clean electronics: search `白色产品 塑料 玻璃 构图 焦距 高光`.
+- Drone / scooter / controller: search `无人机 滑板车 手柄 金属 塑料 反射 三分之一 构图`.
+- Appliance / interior scene: search `吸尘器 投影仪 暖炉 室内 场景 背景 地面 阴影`.
+- Cosmetic / bottle / cup transparency: search `化妆品 小棕瓶 水杯 透明 不透明度 贴图 圆柱映射`.
+- Plush / foam / soft material: search `毛绒 泡沫 布料 粗糙度 凹凸 法线 景深`.
 
 ### C4D
 

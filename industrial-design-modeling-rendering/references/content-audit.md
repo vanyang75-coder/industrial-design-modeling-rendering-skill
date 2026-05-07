@@ -32,6 +32,12 @@ Use these as the primary base for practical answers:
 - `<KB_ROOT>\Rhino 建模\Rhino 字幕证据索引 - 100个犀牛实战案例建模教程.md`
   - Strong first-use source for transcript-backed Rhino case references.
   - Use before older case files when case numbering, BV/title alignment, or video-derived evidence matters.
+- `<KB_ROOT>\KeyShot 渲染\keyshot-video-clean-index.json`
+  - Strong metadata source for the current 30 public KeyShot tutorial videos.
+  - Use for exact case number, BV, title, transcript filename, and collection-order alignment.
+- `<KB_ROOT>\KeyShot 渲染\KeyShot 字幕证据索引 - 100个KS实战案例渲染教程.md`
+  - Strong first-use source for transcript-backed KeyShot case references.
+  - Use before older short subtitle files when material, lighting, camera, scene, or output evidence matters.
 
 ### Tier B: Useful but Needs Cross-Checking
 
@@ -46,6 +52,19 @@ Use these to enrich answers after a Tier A source is found:
 - `<KB_ROOT>\Rhino 建模\Rhino 案例建模参考卡 - 字幕提取版.md`
   - Useful product analogy source distilled from transcripts.
   - Use to enrich answers with case families, but treat it as a summary rather than a verbatim transcript.
+- `<KB_ROOT>\KeyShot 渲染\KeyShot 系统性渲染技巧总纲 - 字幕归纳版.md`
+  - Best current synthesis of repeatable KeyShot rendering techniques from the transcript corpus.
+  - Use for workflow logic: visual target, material, lighting, camera/scene, and output quality.
+- `<KB_ROOT>\KeyShot 渲染\KeyShot 截图问答路由规则 - 字幕证据版.md`
+  - Best current source for screenshot-first KeyShot question routing.
+  - Use to classify visible symptoms before giving material, light, camera, scene, or output fixes.
+- `<KB_ROOT>\KeyShot 渲染\KeyShot 案例渲染参考卡 - 字幕提取版.md`
+  - Useful product analogy source distilled from KeyShot transcripts.
+  - Use to enrich answers with product families, but treat it as a summary rather than verbatim transcript.
+- `<KB_ROOT>\KeyShot 渲染\KeyShot 合集清洗索引 - 100个KS实战案例渲染教程.md`
+  - Newly verified Bilibili season index for the KeyShot 100-case tutorial series.
+  - Use as the canonical BV/title map for the current 30 public videos.
+  - It is metadata, not a full content transcript.
 - `<KB_ROOT>\Rhino 建模\合集索引 - 100个犀牛实战案例建模教程.md`
   - Newly verified Bilibili season index for the Rhino 100-case tutorial series.
   - Use as the canonical BV/title map for cases 31-46 before citing older case notes.
@@ -92,6 +111,8 @@ Use these to enrich answers after a Tier A source is found:
 - Many Rhino case notes have `待确认` metadata or mention rapid analysis such as `极速冲刺流程`. Use them for analogy, not as sole evidence for precise steps.
 - The 2026-05-07 Bilibili collection check found that older Rhino case notes 31-44 may have sequence/BV/title mismatches. Use the new collection index as the source of truth before citing those cases.
 - The 2026-05-07 local Whisper pass completed corrected transcripts for indexes 01-47, but ASR terminology errors can remain. Use transcript-derived summaries as strong workflow evidence, but cross-check exact command names, dimensions, and timestamps when precision matters.
+- The 2026-05-08 KeyShot local Whisper pass completed corrected transcripts for 30 videos in the maintainer's private KB. KeyShot-specific ASR repair fixed recurring terms such as KeyShot, HDRI, 贴图, 凹凸, 粗糙度, 分辨率, 相机, and 焦距. ASR noise can still remain, so use transcript-derived summaries as workflow evidence and cross-check exact UI labels or numeric values before citing them as precise settings.
+- The public `sample-kb/` is intentionally tiny. It validates installation and routing behavior, but it is not evidence-equivalent to the complete private/local knowledge base.
 - Some files are duplicated in `备份\`; avoid double-counting or ranking backup copies as stronger evidence.
 - Some early index files contain placeholders such as `第一步...`; do not rely on placeholder sections.
 - Manufacturing/structure topics such as draft angle, snap fits, screw bosses, waterproofing, shrink marks, and surface finishing are present as categories, but often need professional inference or external/user-provided constraints for exact dimensions.

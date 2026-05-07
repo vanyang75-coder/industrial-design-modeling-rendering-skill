@@ -56,6 +56,31 @@ The Rhino tutorial collection index below is newly verified from Bilibili season
 - `<KB_ROOT>\Rhino 建模\合集深化记录 - 2026-05-07.md`
   - Maintenance log explaining what was verified, what was backed up, and what should be fixed next.
 
+## 2026-05-08 KeyShot Verified Additions
+
+The KeyShot tutorial collection below is designed for a complete local knowledge base. It is not bundled into this public repository, but the skill knows how to prioritize it when present. Use these files before older short subtitle notes when answering material, lighting, camera, scene, output, or screenshot-routing questions:
+
+- `<KB_ROOT>\KeyShot 渲染\KeyShot 合集清洗索引 - 100个KS实战案例渲染教程.md`
+  - Canonical collection index for the current 30 public KeyShot videos.
+  - Important correction: the public collection order starts with title number 15 down to 1, then continues 16-30; cite both collection index and title number when precision matters.
+- `<KB_ROOT>\KeyShot 渲染\keyshot-video-clean-index.json`
+  - Machine-readable clean index for exact case number, BV, title, upload date, transcript filename, focus axis, and evidence snippets.
+- `<KB_ROOT>\KeyShot 渲染\KeyShot 字幕证据索引 - 100个KS实战案例渲染教程.md`
+  - Canonical subtitle evidence index.
+  - Use to locate transcript-backed KeyShot case references, product types, material/light/camera evidence terms, and representative transcript snippets.
+- `<KB_ROOT>\KeyShot 渲染\KeyShot 系统性渲染技巧总纲 - 字幕归纳版.md`
+  - Best current synthesis of repeatable KeyShot rendering technique from the subtitle corpus.
+  - Use for the five-stage rendering chain: visual target, material, lighting, camera/scene, output quality.
+- `<KB_ROOT>\KeyShot 渲染\KeyShot 截图问答路由规则 - 字幕证据版.md`
+  - Best current routing source for uploaded KeyShot screenshots.
+  - Use to classify whether the issue is material, lighting, camera/composition, scene, or output quality, then give 1-3 next actions.
+- `<KB_ROOT>\KeyShot 渲染\KeyShot 案例渲染参考卡 - 字幕提取版.md`
+  - Product-specific case cards distilled from transcripts.
+  - Use for analogies such as headset/wearable, white product, drone/transport, appliance/interior, bottle/cosmetic transparency, plush/flexible material, and handheld electronics.
+- `<KB_ROOT>\KeyShot 渲染\KeyShot 字幕分析与知识库优化提交报告.md`
+  - Completion report for the transcript extraction and knowledge-base optimization pass.
+  - Use for verifying what was completed, known limitations, and next follow-up work.
+
 1. `工业设计软件规则库-v3.0-统一优化版.md`
    - Best first stop for concise Rhino and KeyShot rules.
    - Contains quick Q&A index, rule IDs, parameters, and practical ranges.
@@ -100,6 +125,8 @@ python "scripts\search_kb.py" "截图 问答 路由 下一步" --software rhino
 python "scripts\search_kb.py" "系统性 建模 阶段 曲面 布尔 倒角" --software rhino
 python "scripts\search_kb.py" "吹风机 手柄 风道 倒角" --software rhino
 python "scripts\search_kb.py" "拉丝金属 三点布光 噪点" --software keyshot
+python "scripts\search_kb.py" "KeyShot 截图 问答 路由 材质 灯光" --software keyshot
+python "scripts\search_kb.py" "系统性 渲染 材质 灯光 相机 输出" --software keyshot
 python "scripts\search_kb.py" "NetworkSrf 圆角失败 曲线质量" --software rhino
 ```
 
@@ -116,10 +143,12 @@ For Rhino:
 
 For KeyShot:
 
+- Screenshot questions: first classify the visible issue into `材质`, `灯光`, `相机/构图`, `场景`, or `输出质量`, then search the corresponding route file.
 - Material questions: search material name plus `粗糙度`, `反射`, `折射`, `高光`, `贴图`.
 - Lighting questions: search `三点布光`, `HDRI`, `区域光`, `主光`, `辅光`, `轮廓光`.
 - Output questions: search `采样`, `降噪`, `通道`, `PNG`, `TIFF`, `分辨率`.
 - Realism questions: search product type plus `材质`, `灯光`, `场景`, `相机`.
+- Full rendering workflow questions: search `系统性 渲染 材质 灯光 相机 输出`, then read the KeyShot system overview before case cards.
 
 For C4D:
 

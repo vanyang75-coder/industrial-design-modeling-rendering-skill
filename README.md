@@ -2,6 +2,15 @@
 
 A Codex skill for screenshot-first industrial design modeling and rendering help, focused on Rhino, KeyShot, C4D, product modeling workflows, visual troubleshooting, and local knowledge-base retrieval.
 
+## 2026-05-08 Update
+
+This release adds the public workflow updates from a 30-video KeyShot rendering corpus analysis:
+
+- KeyShot screenshot routing now separates material, lighting, camera/composition, scene, and output-quality issues.
+- KeyShot retrieval prioritizes subtitle-derived corpus files when a complete local knowledge base is connected.
+- The search script has stronger KeyShot query expansion for plastic, metal, transparent products, plush/foam materials, noise, sampling, HDRI, camera, and composition.
+- The sample knowledge base includes lightweight public examples only, so users can test the workflow without private subtitles or source archives.
+
 ## Full Capability Requirements
 
 This skill is designed as a workflow and retrieval layer. Its full value depends on at least one of the following:
@@ -64,6 +73,7 @@ You can also test retrieval directly:
 ```powershell
 python industrial-design-modeling-rendering\scripts\search_kb.py "吹风机 手柄 风道 倒角" --software rhino --root sample-kb
 python industrial-design-modeling-rendering\scripts\search_kb.py "塑料 材质 粗糙度" --software keyshot --root sample-kb
+python industrial-design-modeling-rendering\scripts\search_kb.py "KeyShot 截图 材质 灯光 相机 输出" --software keyshot --root sample-kb
 ```
 
 ## Sample Knowledge Base

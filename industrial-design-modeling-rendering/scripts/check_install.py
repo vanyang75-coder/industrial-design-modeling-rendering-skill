@@ -81,32 +81,39 @@ def run_search_probe(skill_root: Path, kb_root: Path | None) -> bool:
         fail("Cannot run search probe because scripts/search_kb.py is missing")
         return False
 
-    command = [
-        sys.executable,
-        str(search_script),
-        "截图 路由 下一步",
-        "--software",
-        "rhino",
-        "--top",
-        "3",
+    probes = [
+        ("Rhino screenshot route", "截图 路由 下一步", "rhino"),
+        ("KeyShot render route", "KeyShot 截图 材质 灯光 相机 输出", "keyshot"),
     ]
-    if kb_root is not None:
-        command.extend(["--root", str(kb_root)])
-
     env = os.environ.copy()
-    result = subprocess.run(command, text=True, capture_output=True, env=env)
-    if result.returncode != 0:
-        fail("Search probe failed")
-        if result.stderr.strip():
-            print(result.stderr.strip())
-        return False
+    passed = True
+    for label, query, software in probes:
+        command = [
+            sys.executable,
+            str(search_script),
+            query,
+            "--software",
+            software,
+            "--top",
+            "3",
+        ]
+        if kb_root is not None:
+            command.extend(["--root", str(kb_root)])
 
-    if result.stdout.strip():
-        ok("Search probe returned results")
-        print(result.stdout.strip())
-    else:
-        warn("Search probe ran but returned no results")
-    return True
+        result = subprocess.run(command, text=True, capture_output=True, env=env)
+        if result.returncode != 0:
+            fail(f"{label} search probe failed")
+            if result.stderr.strip():
+                print(result.stderr.strip())
+            passed = False
+            continue
+
+        if result.stdout.strip():
+            ok(f"{label} search probe returned results")
+            print(result.stdout.strip())
+        else:
+            warn(f"{label} search probe ran but returned no results")
+    return passed
 
 
 def main() -> int:

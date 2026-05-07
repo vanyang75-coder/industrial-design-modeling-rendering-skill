@@ -1,5 +1,14 @@
 # Industrial Design Modeling Rendering - Publish Notes
 
+## 2026-05-08 Update
+
+This update carries over the public-safe workflow improvements from a deeper KeyShot rendering corpus pass:
+
+- KeyShot screenshot answers now use a material-light-camera-scene-output routing model.
+- The public package can prioritize a complete local KeyShot subtitle-derived KB when users provide one.
+- The repository still does not publish private raw subtitles, audio, video downloads, or the maintainer's full Obsidian knowledge base.
+- `sample-kb/` now includes lightweight KeyShot routing and system-overview samples for installation testing.
+
 This release contains the Codex skill package and a small sanitized sample knowledge base:
 
 `industrial-design-modeling-rendering/`

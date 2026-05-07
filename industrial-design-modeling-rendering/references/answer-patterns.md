@@ -86,6 +86,41 @@ Detailed Rhino case answer:
 
 Do not turn every screenshot into a full tutorial. Most screenshot help should be a compact next-step diagnosis unless the user explicitly asks for the full modeling flow.
 
+## KeyShot Screenshot-First From Subtitle Corpus
+
+Use when the screenshot, render preview, or reference image is about KeyShot product rendering and the user asks what to adjust next, what is wrong, or how to make it look closer to a target render.
+
+Structure:
+
+1. Visual state: name the visible render stage and product family.
+2. Route: choose the closest case family from the KeyShot subtitle corpus when a full local KB is connected.
+3. Diagnose axis: material, lighting, camera/composition, scene, or output quality.
+4. Next action: give 1-3 concrete KeyShot adjustments for the current axis only.
+5. Failure check: name the one thing most likely to invalidate the advice.
+6. Boundary: state what is visible, what is inferred, and what would require a material/light/render-settings crop.
+
+Short form:
+
+```markdown
+我先按截图判断：这是 X 类产品，目前主要卡在 Y 轴，不是先改所有参数。
+
+下一步：
+1. ...
+2. ...
+3. ...
+
+失败时先查：...
+依据：KeyShot 字幕案例里更接近的是 ...；截图里可确认的是 ...；未显示的材质/灯光参数我按渲染逻辑推断。
+```
+
+KeyShot extraction rule:
+
+- Do not treat KeyShot like Rhino command extraction. Rhino answers focus on geometry sequence; KeyShot answers focus on visual symptoms and the material-light-camera-scene-output chain.
+- If the screenshot shows a render preview, answer by visible symptom first.
+- If the screenshot shows a material graph/properties panel, answer by material/texture mapping first.
+- If the screenshot shows environment or lights, answer by highlight shape, light role, shadow, and reflection first.
+- If the screenshot shows camera/output settings, answer by composition, focal length, depth of field, samples, denoise, and format first.
+
 ## Rendering Recipe
 
 Use when the user asks for KeyShot material, lighting, camera, output, or realistic product rendering.
