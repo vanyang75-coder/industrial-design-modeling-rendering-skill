@@ -4,7 +4,7 @@ A Codex skill for screenshot-first industrial design modeling and rendering help
 
 ## 2026-05-08 Update
 
-This release adds the public workflow updates from a 30-video KeyShot rendering corpus analysis:
+This release adds the public workflow updates from KeyShot rendering corpus analysis:
 
 - KeyShot screenshot routing now separates material, lighting, camera/composition, scene, and output-quality issues.
 - KeyShot retrieval prioritizes subtitle-derived corpus files when a complete local knowledge base is connected.
